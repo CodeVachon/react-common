@@ -1,0 +1,27 @@
+name: Build and Deploy NPM Package
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: pnpm/action-setup@v2.2.2
+        name: Install pnpm
+        with:
+          version: latest
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "18.x"
+          registry-url: "https://registry.npmjs.org"
+
+      - run: pnpm install
+      - run: pnpm run build
+      - run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
