@@ -2,10 +2,10 @@ import { Story } from "@ladle/react";
 import React from "react";
 import { Stack, StackSize, stackSizes } from "./Stack";
 
-const PlaceHolder = () => (
-    <div className="border border-dashed border-slate-900 p-6 rounded flex items-center justify-center">
-        <p>Place Holder</p>
-    </div>
+const Block = () => (
+    <p className="bg-slate-900 text-white px-4 py-2 border border-dashed border-white rounded">
+        Block
+    </p>
 );
 
 export const KitchenSink: Story<{
@@ -13,26 +13,21 @@ export const KitchenSink: Story<{
 }> = ({ spacing = "default" }) => {
     return (
         <Stack spacing={spacing}>
-            <PlaceHolder />
-            <PlaceHolder />
-            <PlaceHolder />
-            <PlaceHolder />
-            <PlaceHolder />
+            <Block />
+            <Block />
+            <Block />
+            <Block />
+            <Block />
         </Stack>
     );
 };
 KitchenSink.argTypes = {
-    size: {
+    spacing: {
         options: stackSizes,
         control: { type: "select" }
     }
 };
 
-const Block = () => (
-    <p className="bg-slate-900 text-white px-4 py-2 border border-dashed border-white rounded">
-        Block
-    </p>
-);
 export const Spacing: Story<{
     spacing: StackSize;
 }> = () => {

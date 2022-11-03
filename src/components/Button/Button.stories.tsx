@@ -38,11 +38,11 @@ export const Sizes: Story<{
 }> = ({ onClick }) => {
     return (
         <ul className="flex flex-col space-y-6">
-            {buttonSizes.map((btn) => (
-                <div key={btn}>
-                    <div>{btn}</div>
+            {buttonSizes.map((value) => (
+                <div key={value}>
+                    <p className="font-bold">{value}</p>
                     <div>
-                        <Button onClick={onClick} size={btn}>
+                        <Button onClick={onClick} size={value}>
                             Hello
                         </Button>
                     </div>
@@ -62,11 +62,11 @@ export const Types: Story<{
 }> = ({ onClick }) => {
     return (
         <ul className="flex flex-col space-y-6">
-            {buttonTypes.map((btn) => (
-                <div key={btn}>
-                    <div>{btn}</div>
+            {buttonTypes.map((value) => (
+                <div key={value}>
+                    <p className="font-bold">{value}</p>
                     <div>
-                        <Button onClick={onClick} type={btn}>
+                        <Button onClick={onClick} type={value}>
                             Hello
                         </Button>
                     </div>

@@ -1,6 +1,6 @@
 import { ClassNames } from "@codevachon/classnames";
 import React from "react";
-import { FC, ReactNode } from "react";
+import type { FC, ReactNode } from "react";
 
 export const stackSizes = ["default", "none", "xs", "sm", "lg", "xl"] as const;
 export type StackSize = typeof stackSizes[number];

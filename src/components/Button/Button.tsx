@@ -57,6 +57,7 @@ const Button: FC<IButtonProps | IButtonAProps> = ({
                 }
             },
             className: new ClassNames([
+                "transition duration-300",
                 "inline-flex items-center border border-transparent",
                 "font-medium text-white shadow-sm",
                 "focus:outline-none focus:ring-2 focus:ring-offset-1",
