@@ -1324,7 +1324,7 @@ packages:
     dev: true
 
   /@codevachon/classnames/1.2.0:
-    resolution: {integrity: sha512-6uhzlwhInEa2DyOp5gDpc87dMwPTp9+H95SU8SLX9ZfFDcYQduJDy4yXmwetRj92RMEKaqmGQdIKnCbIavGClQ==, tarball: download/@codevachon/classnames/1.2.0/f6dabb2d697b50bfa0d7123531977960893a3052}
+    resolution: {integrity: sha512-6uhzlwhInEa2DyOp5gDpc87dMwPTp9+H95SU8SLX9ZfFDcYQduJDy4yXmwetRj92RMEKaqmGQdIKnCbIavGClQ==}
     engines: {node: '>=16'}
     requiresBuild: true
     dev: false
