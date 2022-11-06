@@ -1,5 +1,6 @@
 import { Story } from "@ladle/react";
 import React from "react";
+import { Card } from "../Card/Card";
 import { Button, buttonSizes, ButtonSize, buttonTypes, ButtonType } from "./Button";
 
 export const KitchenSink: Story<{
@@ -39,14 +40,11 @@ export const Sizes: Story<{
     return (
         <ul className="flex flex-col space-y-6">
             {buttonSizes.map((value) => (
-                <div key={value}>
-                    <p className="font-bold">{value}</p>
-                    <div>
-                        <Button onClick={onClick} size={value}>
-                            Hello
-                        </Button>
-                    </div>
-                </div>
+                <Card header={<p className="font-bold">{value}</p>} key={value}>
+                    <Button onClick={onClick} size={value}>
+                        Hello
+                    </Button>
+                </Card>
             ))}
         </ul>
     );
@@ -63,14 +61,11 @@ export const Types: Story<{
     return (
         <ul className="flex flex-col space-y-6">
             {buttonTypes.map((value) => (
-                <div key={value}>
-                    <p className="font-bold">{value}</p>
-                    <div>
-                        <Button onClick={onClick} type={value}>
-                            Hello
-                        </Button>
-                    </div>
-                </div>
+                <Card header={<p className="font-bold">{value}</p>} key={value}>
+                    <Button onClick={onClick} type={value}>
+                        Hello
+                    </Button>
+                </Card>
             ))}
         </ul>
     );

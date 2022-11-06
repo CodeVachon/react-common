@@ -5,7 +5,14 @@ import React from "react";
 export const buttonSizes = ["default", "xs", "sm", "lg", "xl"] as const;
 export type ButtonSize = typeof buttonSizes[number];
 
-export const buttonTypes = ["default", "success", "danger"] as const;
+export const buttonTypes = [
+    "default",
+    "primary",
+    "secondary",
+    "tertiary",
+    "success",
+    "danger"
+] as const;
 export type ButtonType = typeof buttonTypes[number];
 
 export const buttonAs = ["a", "button"] as const;
@@ -45,6 +52,7 @@ const Button: FC<IButtonProps | IButtonAProps> = ({
     return React.createElement(
         as,
         {
+            "data-type": "button",
             disabled,
             onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
                 if (onClick) {
@@ -80,11 +88,17 @@ const Button: FC<IButtonProps | IButtonAProps> = ({
                     new ClassNames().switch(
                         type,
                         {
+                            primary:
+                                "bg-primary enabled:hover:bg-primary active:ring-primary focus:ring-primary",
+                            secondary:
+                                "bg-secondary enabled:hover:bg-secondary active:ring-secondary focus:ring-secondary",
+                            tertiary:
+                                "bg-tertiary enabled:hover:bg-tertiary active:ring-tertiary focus:ring-tertiary",
                             success:
-                                "bg-emerald-700 enabled:hover:bg-emerald-600 active:ring-emerald-600 focus:ring-emerald-600",
-                            danger: "bg-red-700 enabled:hover:bg-red-600 active:ring-red-600 focus:ring-red-600"
+                                "bg-success enabled:hover:bg-success active:ring-success focus:ring-success",
+                            danger: "bg-danger enabled:hover:bg-danger active:ring-danger focus:ring-danger"
                         },
-                        "bg-sky-700 enabled:hover:bg-sky-600 active:ring-sky-600 focus:ring-sky-600"
+                        "bg-primary enabled:hover:bg-primary active:ring-primary focus:ring-primary"
                     )
                 )
                 .add(className)

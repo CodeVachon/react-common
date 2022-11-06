@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    :root {
+        /* Setup Colors as Per Tailwind Document */
+        /* https://tailwindcss.com/docs/customizing-colors#using-css-variables */
+        --color-primary: 2 132 199;
+        --color-secondary: 13 148 136;
+        --color-tertiary: 234 88 12;
+        --color-danger: 190 18 60;
+        --color-success: 22 163 74;
+    }
+}

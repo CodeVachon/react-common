@@ -19,6 +19,7 @@ const Stack: FC<IStackProps> = ({ as = "div", className = "", spacing = "default
     return React.createElement(
         as,
         {
+            "data-type": "stack",
             className: new ClassNames(["flex flex-col"])
                 .switch(
                     spacing,

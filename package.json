@@ -54,6 +54,7 @@
     "vue-tsc": "^1.0.9"
   },
   "dependencies": {
-    "@codevachon/classnames": "^1.2.0"
+    "@codevachon/classnames": "^1.2.0",
+    "@codevachon/utilities": "^1.0.0"
   }
 }
