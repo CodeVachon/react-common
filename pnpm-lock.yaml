@@ -1678,8 +1678,7 @@ packages:
     /@codevachon/utilities/1.0.0:
         resolution:
             {
-                integrity: sha512-7bUtXfzxbbIDNUvyJkX8lxF/wQey1srylGINZ4a4Bhpnl+Oj2IM3ERtP+gY+6jWfV8S3wEJJapJiYX9VT4fgSg==,
-                tarball: download/@codevachon/utilities/1.0.0/391f8f1cd3a1a7311c70dc323b2a24804e590f88
+                integrity: sha512-7bUtXfzxbbIDNUvyJkX8lxF/wQey1srylGINZ4a4Bhpnl+Oj2IM3ERtP+gY+6jWfV8S3wEJJapJiYX9VT4fgSg==
             }
         engines: { node: ">=16" }
         requiresBuild: true
