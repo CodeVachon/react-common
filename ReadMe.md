@@ -8,13 +8,19 @@ A Library of Common Read Components
 
 ## Install
 
+### pnpm
+
 ```sh
 pnpm add @codevachon/react-common @codevachon/classnames @codevachon/utilities
 ```
 
+### yarn
+
 ```sh
 yarn add @codevachon/react-common @codevachon/classnames @codevachon/utilities
 ```
+
+### npm
 
 ```sh
 npm install @codevachon/react-common @codevachon/classnames @codevachon/utilities
@@ -26,7 +32,7 @@ Pull in the Style Sheet and add the required values to the `tailwind.config.js` 
 
 ```tsx
 // src/pages/_app.tsx
-import "@codevachon/react-common/style.css";
+import "@codevachon/react-common/style.css"; // Import Preset Styling
 import "./../styles/global.css";
 
 export default function MyApp({ Component, pageProps }) {
@@ -34,8 +40,24 @@ export default function MyApp({ Component, pageProps }) {
 }
 ```
 
+### Use Tailwind Preset
+
 ```js
 // tailwind.config.js
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+    content: ["./src/**/*.{ts,js,tsx,jsx}"],
+    preset: ["@codevachon/react-common/tailwind.preset"],
+    theme: {},
+    plugins: []
+};
+```
+
+### Manual Tailwind Configuration
+
+```js
+// tailwind.config.js
+/** @type {import('tailwindcss').Config} */
 module.exports = {
     content: ["./src/**/*.{ts,js,tsx,jsx}"],
     theme: {

@@ -66,7 +66,7 @@ const Button: FC<IButtonProps | IButtonAProps> = ({
             },
             className: new ClassNames([
                 "transition duration-300",
-                "inline-flex items-center border border-transparent",
+                "inline-flex items-center justify-center border border-transparent",
                 "font-medium text-white shadow-sm",
                 "focus:outline-none focus:ring-2 focus:ring-offset-1",
                 "enabled:active:ring-2 enabled:active:ring-offset-2"
@@ -88,8 +88,6 @@ const Button: FC<IButtonProps | IButtonAProps> = ({
                     new ClassNames().switch(
                         type,
                         {
-                            primary:
-                                "bg-primary enabled:hover:bg-primary active:ring-primary focus:ring-primary",
                             secondary:
                                 "bg-secondary enabled:hover:bg-secondary active:ring-secondary focus:ring-secondary",
                             tertiary:

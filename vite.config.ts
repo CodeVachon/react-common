@@ -3,6 +3,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tsConfigPaths from "vite-tsconfig-paths";
 import dts from "vite-plugin-dts";
+import { viteStaticCopy } from "vite-plugin-static-copy";
 
 // https://vitejs.dev/config/
 /** @type {import('vite').UserConfig} */
@@ -12,6 +13,9 @@ export default defineConfig((configEnv) => ({
         tsConfigPaths(),
         dts({
             include: ["src/index.ts"]
+        }),
+        viteStaticCopy({
+            targets: [{ src: "src/tailwind.preset.js", dest: "." }]
         })
     ],
     build: {
