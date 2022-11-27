@@ -1,6 +1,6 @@
 {
   "name": "@codevachon/react-common",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "",
   "scripts": {
     "dev": "ladle serve",
@@ -37,6 +37,8 @@
     "react": ">=18.x"
   },
   "devDependencies": {
+    "@headlessui/react": "^1.7.4",
+    "@heroicons/react": "^2.0.13",
     "@ladle/react": "^2.4.5",
     "@tailwindcss/typography": "^0.5.8",
     "@types/marked": "^4.0.7",

@@ -2,19 +2,30 @@ import React from "react";
 import { marked } from "marked";
 import { ClassNames } from "@codevachon/classnames";
 
+const commonMarkDownClasses = new ClassNames(["prose max-w-none lg:prose-lg"]);
+
 export const About = () => {
     return (
         <div
-            className={new ClassNames(["prose"]).list()}
+            className={new ClassNames(commonMarkDownClasses).list()}
             dangerouslySetInnerHTML={{
                 __html: marked.parse(`
 # @CodeVachon React Common Components
 
 A Library of Common Read Components
 
--   [TypeDoc](https://codevachon.github.io/react-common/)
+-   [Ladle Storybook](https://codevachon.github.io/react-common/)
 -   [GitHub](https://github.com/CodeVachon/react-common)
 -   [npm](https://www.npmjs.com/package/@codevachon/react-common)
+
+## Dependencies
+
+-   [Tailwindcss](https://tailwindcss.com/)
+-   [@tailwindcss/typography](https://tailwindcss.com/docs/typography-plugin)
+-   [HeadlessUI](https://headlessui.com/)
+-   [HeroIcons](https://heroicons.com/)
+-   [@codevachon/utilities](https://codevachon.github.io/utilities/)
+-   [@codevachon/classnames](https://codevachon.github.io/classnames/)
 
 `)
             }}
@@ -29,9 +40,17 @@ export const Install = () => {
         { cmd: "npm", install: "install" }
     ];
 
+    const peerDependencies = [
+        "@codevachon/react-common",
+        "@codevachon/classnames",
+        "@codevachon/utilities",
+        "@headlessui/react",
+        "@heroicons/react"
+    ];
+
     return (
         <div
-            className={new ClassNames(["prose"]).list()}
+            className={new ClassNames(commonMarkDownClasses).list()}
             dangerouslySetInnerHTML={{
                 __html: marked.parse(`
 # Install
@@ -44,7 +63,7 @@ ${pkgManagers
 ### ${value.cmd}
 
 \`\`\`sh
-${value.cmd} ${value.install} @codevachon/react-common @codevachon/classnames @codevachon/utilities
+${value.cmd} ${value.install} ${peerDependencies.join(" ")}
 \`\`\`
 `
     )
@@ -63,6 +82,7 @@ ${pkgManagers
 ${value.cmd} ${value.install} -D tailwindcss postcss autoprefixer @tailwindcss/typography
 npx tailwindcss init -p
 \`\`\`
+
 `
     )
     .join("")}
@@ -76,7 +96,7 @@ npx tailwindcss init -p
 export const Usage = () => {
     return (
         <div
-            className={new ClassNames(["prose"]).list()}
+            className={new ClassNames(commonMarkDownClasses).list()}
             dangerouslySetInnerHTML={{
                 __html: marked.parse(`
 # Usage

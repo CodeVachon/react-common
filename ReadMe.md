@@ -2,28 +2,37 @@
 
 A Library of Common Read Components
 
--   [TypeDoc](https://codevachon.github.io/react-common/)
+-   [Ladle Storybook](https://codevachon.github.io/react-common/)
 -   [GitHub](https://github.com/CodeVachon/react-common)
 -   [npm](https://www.npmjs.com/package/@codevachon/react-common)
+
+## Dependencies
+
+-   [Tailwindcss](https://tailwindcss.com/)
+-   [@tailwindcss/typography](https://tailwindcss.com/docs/typography-plugin)
+-   [HeadlessUI](https://headlessui.com/)
+-   [HeroIcons](https://heroicons.com/)
+-   [@codevachon/utilities](https://codevachon.github.io/utilities/)
+-   [@codevachon/classnames](https://codevachon.github.io/classnames/)
 
 ## Install
 
 ### pnpm
 
 ```sh
-pnpm add @codevachon/react-common @codevachon/classnames @codevachon/utilities
+pnpm add @codevachon/react-common @codevachon/classnames @codevachon/utilities @headlessui/react @heroicons/react
 ```
 
 ### yarn
 
 ```sh
-yarn add @codevachon/react-common @codevachon/classnames @codevachon/utilities
+yarn add @codevachon/react-common @codevachon/classnames @codevachon/utilities @headlessui/react @heroicons/react
 ```
 
 ### npm
 
 ```sh
-npm install @codevachon/react-common @codevachon/classnames @codevachon/utilities
+npm install @codevachon/react-common @codevachon/classnames @codevachon/utilities @headlessui/react @heroicons/react
 ```
 
 ## Usage

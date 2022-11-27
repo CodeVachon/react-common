@@ -34,7 +34,16 @@ export const Header: Story<{
 }> = ({ body = "Hello" }) => {
     return <Card header={"Header Content"}>{body}</Card>;
 };
-KitchenSink.args = {
+Header.args = {
+    body: "Hello"
+};
+
+export const Body: Story<{
+    body: string;
+}> = ({ body = "Hello" }) => {
+    return <Card>{body}</Card>;
+};
+Body.args = {
     body: "Hello"
 };
 
@@ -43,6 +52,6 @@ export const Footer: Story<{
 }> = ({ body = "Hello" }) => {
     return <Card footer={"Footer Content"}>{body}</Card>;
 };
-KitchenSink.args = {
+Footer.args = {
     body: "Hello"
 };
