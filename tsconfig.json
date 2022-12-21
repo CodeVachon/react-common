@@ -18,6 +18,7 @@
     "declaration": true,
     "outDir": "./dist"
   },
+  "files": ["global.d.ts"],
   "include": ["./src"],
   "exclude": ["./src/**/*.stories.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]

@@ -79,7 +79,7 @@ ${pkgManagers
 ### ${value.cmd}
 
 \`\`\`sh
-${value.cmd} ${value.install} -D tailwindcss postcss autoprefixer @tailwindcss/typography
+${value.cmd} ${value.install} -D tailwindcss postcss autoprefixer @tailwindcss/typography @tailwindcss/forms
 npx tailwindcss init -p
 \`\`\`
 

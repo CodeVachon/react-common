@@ -1,9 +1,9 @@
 import ClassNames from "@codevachon/classnames";
 import { FC, Fragment } from "react";
 import { Listbox, Transition } from "@headlessui/react";
-import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
+import { IconCheck, IconChevronUpDown } from "./../Icons";
 
-interface IListBoxProps {
+export interface IListBoxProps {
     className?: string | ClassNames;
     value: string;
     onChange: (value: string) => void;
@@ -32,7 +32,8 @@ const ListBox: FC<IListBoxProps> = ({ value, options = [], onChange, className =
             <div className={new ClassNames(["relative"]).add(className).list()}>
                 <Listbox.Button
                     className={new ClassNames([
-                        "relative z-10 w-full cursor-default rounded-lg border bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm"
+                        "relative z-10 w-full cursor-default rounded-md border bg-white py-2 pl-3 pr-10 text-left shadow-md sm:text-sm",
+                        "focus:outline-none focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-opacity-75 focus-visible:ring-offset-2"
                     ]).list()}
                 >
                     <span className={new ClassNames(["block truncate"]).list()}>
@@ -43,7 +44,7 @@ const ListBox: FC<IListBoxProps> = ({ value, options = [], onChange, className =
                             "pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2"
                         ]).list()}
                     >
-                        <ChevronUpDownIcon
+                        <IconChevronUpDown
                             className={new ClassNames(["h-5 w-5 text-gray-400"]).list()}
                             aria-hidden="true"
                         />
@@ -67,7 +68,7 @@ const ListBox: FC<IListBoxProps> = ({ value, options = [], onChange, className =
                                     new ClassNames([
                                         "relative cursor-default select-none py-2 pl-10 pr-4"
                                     ])
-                                        .if(active, "bg-amber-100 text-amber-900", "text-gray-900")
+                                        .if(active, "bg-primary/10 text-primary", "text-gray-900")
                                         .list()
                                 }
                                 value={option.value}
@@ -82,8 +83,8 @@ const ListBox: FC<IListBoxProps> = ({ value, options = [], onChange, className =
                                             {option.label}
                                         </span>
                                         {selected ? (
-                                            <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600">
-                                                <CheckIcon className="h-5 w-5" aria-hidden="true" />
+                                            <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-primary">
+                                                <IconCheck className="h-5 w-5" aria-hidden="true" />
                                             </span>
                                         ) : null}
                                     </>
