@@ -79,7 +79,7 @@ export const asColumn: Story<{
         <ul className="flex flex-col space-y-6">
             {buttonSpacing.map((value) => (
                 <Card header={<p className="font-bold">{value}</p>} key={value}>
-                    <ButtonGroup spacing={value} asColumn>
+                    <ButtonGroup spacing={value} asColumn key={value}>
                         <Button onClick={onClick}>Button 1</Button>
                         <Button onClick={onClick}>Button 2</Button>
                         <Button onClick={onClick}>Button 3</Button>

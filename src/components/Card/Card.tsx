@@ -28,11 +28,13 @@ const Card: FC<ICardProps> = ({
     noBodyPadding = false,
     children,
     header,
-    footer
+    footer,
+    ...props
 }) => {
     return React.createElement(
         as,
         {
+            ...props,
             "data-type": "card",
             className: new ClassNames(["border rounded shadow", "bg-white/25"])
                 .add(className)
@@ -43,6 +45,7 @@ const Card: FC<ICardProps> = ({
                 ? React.createElement(
                       "header",
                       {
+                          key: "card-header",
                           "data-type": "card-header",
                           className: new ClassNames("border-b")
                               .add(headerClassName)
@@ -55,6 +58,7 @@ const Card: FC<ICardProps> = ({
             React.createElement(
                 "main",
                 {
+                    key: "card-body",
                     "data-type": "card-body",
                     className: new ClassNames()
                         .if(noBodyPadding === false, cardPadding, "p-0")
@@ -67,6 +71,7 @@ const Card: FC<ICardProps> = ({
                 ? React.createElement(
                       "footer",
                       {
+                          key: "card-footer",
                           "data-type": "card-footer",
                           className: new ClassNames("border-t")
                               .add(footerClassName)

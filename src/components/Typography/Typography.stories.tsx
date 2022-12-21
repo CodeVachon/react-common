@@ -28,7 +28,7 @@ export const TypeScale: Story<{
 }> = ({ text = "Hello World", body = "I Am Groot" }) => (
     <Stack spacing="lg">
         {pageTitleSizes.map((size) => (
-            <Card header={<SectionTitle title={`PageTitle: Size ${size}`} />}>
+            <Card header={<SectionTitle title={`PageTitle: Size ${size}`} />} key={size}>
                 <PageTitle size={size}>{text}</PageTitle>
                 <p>{body}</p>
             </Card>
