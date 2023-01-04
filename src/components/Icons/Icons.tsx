@@ -607,6 +607,76 @@ export const SolidClipboardCopy = ({ className = "h-5 w-5", ariaHidden = false }
     </svg>
 );
 
+// solid Wifi
+export const IconSolidWifi = ({ className = "h-5 w-5", ariaHidden = false }: IIconProps) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className={new ClassNames(className).ifNotAdd(/h-+./, "h-5").ifNotAdd(/w-+./, "w-5").list()}
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        aria-hidden={ariaHidden}
+    >
+        <path
+            fillRule="evenodd"
+            d="M1.371 8.143c5.858-5.857 15.356-5.857 21.213 0a.75.75 0 010 1.061l-.53.53a.75.75 0 01-1.06 0c-4.98-4.979-13.053-4.979-18.032 0a.75.75 0 01-1.06 0l-.53-.53a.75.75 0 010-1.06zm3.182 3.182c4.1-4.1 10.749-4.1 14.85 0a.75.75 0 010 1.061l-.53.53a.75.75 0 01-1.062 0 8.25 8.25 0 00-11.667 0 .75.75 0 01-1.06 0l-.53-.53a.75.75 0 010-1.06zm3.204 3.182a6 6 0 018.486 0 .75.75 0 010 1.061l-.53.53a.75.75 0 01-1.061 0 3.75 3.75 0 00-5.304 0 .75.75 0 01-1.06 0l-.53-.53a.75.75 0 010-1.06zm3.182 3.182a1.5 1.5 0 012.122 0 .75.75 0 010 1.061l-.53.53a.75.75 0 01-1.061 0l-.53-.53a.75.75 0 010-1.06z"
+            clipRule="evenodd"
+        />
+    </svg>
+);
+
+export const IconScrewDriverWrench = ({
+    className = "h-5 w-5",
+    ariaHidden = false
+}: IIconProps) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className={new ClassNames(className).ifNotAdd(/h-+./, "h-5").ifNotAdd(/w-+./, "w-5").list()}
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        aria-hidden={ariaHidden}
+    >
+        <path
+            fillRule="evenodd"
+            d="M12 6.75a5.25 5.25 0 016.775-5.025.75.75 0 01.313 1.248l-3.32 3.319c.063.475.276.934.641 1.299.365.365.824.578 1.3.64l3.318-3.319a.75.75 0 011.248.313 5.25 5.25 0 01-5.472 6.756c-1.018-.086-1.87.1-2.309.634L7.344 21.3A3.298 3.298 0 112.7 16.657l8.684-7.151c.533-.44.72-1.291.634-2.309A5.342 5.342 0 0112 6.75zM4.117 19.125a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75h-.008a.75.75 0 01-.75-.75v-.008z"
+            clipRule="evenodd"
+        />
+        <path d="M10.076 8.64l-2.201-2.2V4.874a.75.75 0 00-.364-.643l-3.75-2.25a.75.75 0 00-.916.113l-.75.75a.75.75 0 00-.113.916l2.25 3.75a.75.75 0 00.643.364h1.564l2.062 2.062 1.575-1.297z" />
+        <path
+            fillRule="evenodd"
+            d="M12.556 17.329l4.183 4.182a3.375 3.375 0 004.773-4.773l-3.306-3.305a6.803 6.803 0 01-1.53.043c-.394-.034-.682-.006-.867.042a.589.589 0 00-.167.063l-3.086 3.748zm3.414-1.36a.75.75 0 011.06 0l1.875 1.876a.75.75 0 11-1.06 1.06L15.97 17.03a.75.75 0 010-1.06z"
+            clipRule="evenodd"
+        />
+    </svg>
+);
+
+export const IconLockClosed = ({ className = "h-5 w-5", ariaHidden = false }: IIconProps) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className={new ClassNames(className).ifNotAdd(/h-+./, "h-5").ifNotAdd(/w-+./, "w-5").list()}
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        aria-hidden={ariaHidden}
+    >
+        <path
+            fillRule="evenodd"
+            d="M12 1.5a5.25 5.25 0 00-5.25 5.25v3a3 3 0 00-3 3v6.75a3 3 0 003 3h10.5a3 3 0 003-3v-6.75a3 3 0 00-3-3v-3c0-2.9-2.35-5.25-5.25-5.25zm3.75 8.25v-3a3.75 3.75 0 10-7.5 0v3h7.5z"
+            clipRule="evenodd"
+        />
+    </svg>
+);
+
+export const IconLockOpen = ({ className = "h-5 w-5", ariaHidden = false }: IIconProps) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className={new ClassNames(className).ifNotAdd(/h-+./, "h-5").ifNotAdd(/w-+./, "w-5").list()}
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        aria-hidden={ariaHidden}
+    >
+        <path d="M18 1.5c2.9 0 5.25 2.35 5.25 5.25v3.75a.75.75 0 01-1.5 0V6.75a3.75 3.75 0 10-7.5 0v3a3 3 0 013 3v6.75a3 3 0 01-3 3H3.75a3 3 0 01-3-3v-6.75a3 3 0 013-3h9v-3c0-2.9 2.35-5.25 5.25-5.25z" />
+    </svg>
+);
+
 /**
  * List of the Name of All the Icons
  *
@@ -647,7 +717,12 @@ export const iconNames = [
     "Settings",
     "Sparkles",
     "Spinner",
-    "User"
+    "User",
+    "Wifi",
+    "ScrewDriverWrench",
+    "X",
+    "LockOpen",
+    "LockClosed"
 ] as const;
 export type IconName = typeof iconNames[number];
 
@@ -721,6 +796,16 @@ export const Icon = ({ name, ...props }: { name: IconName } & IIconProps) => {
             return <IconSpinner {...props} />;
         case "User":
             return <IconUser {...props} />;
+        case "Wifi":
+            return <IconSolidWifi {...props} />;
+        case "ScrewDriverWrench":
+            return <IconScrewDriverWrench {...props} />;
+        case "X":
+            return <IconX {...props} />;
+        case "LockOpen":
+            return <IconLockOpen {...props} />;
+        case "LockClosed":
+            return <IconLockClosed {...props} />;
         default:
             return <IconCircleExclamation {...props} />;
     }
