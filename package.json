@@ -1,7 +1,7 @@
 {
   "name": "@codevachon/react-common",
-  "version": "0.6.0",
-  "description": "",
+  "version": "0.6.1",
+  "description": "a library of common react components for rapid prototyping",
   "scripts": {
     "dev": "ladle serve",
     "build": "vite build && vue-tsc --emitDeclarationOnly",

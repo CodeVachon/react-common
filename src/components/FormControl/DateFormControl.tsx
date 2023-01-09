@@ -1,7 +1,6 @@
 import ClassNames from "@codevachon/classnames";
 import { range } from "@codevachon/utilities";
 import { FC, useCallback, useEffect, useMemo, useState } from "react";
-import { useDebounce } from "src/hooks";
 import { ListBox } from "../ListBox";
 
 export const DateFormControlSpacingValues = [
@@ -87,13 +86,14 @@ const DateFormControl: FC<IDateFormControlProps> = ({
     );
 
     const forceValidDate = useCallback((cDate: DateFormControlDateObject) => {
-        const maxDay = daysInMonth(cDate.month, cDate.year);
+        const thisDate = { ...cDate };
+        const maxDay = daysInMonth(thisDate.month, thisDate.year);
 
-        if (cDate.day > maxDay) {
-            cDate.day = maxDay;
+        if (thisDate.day > maxDay) {
+            thisDate.day = maxDay;
         }
 
-        return cDate;
+        return thisDate;
     }, []);
 
     const [date, setDate] = useState<DateFormControlDateObject>(formatInputDate(value));
@@ -210,7 +210,7 @@ const DateFormControl: FC<IDateFormControlProps> = ({
 };
 
 function daysInMonth(month: number, year: number) {
-    return new Date(year, month + 1, 0).getDate();
+    return new Date(year, month, 0).getDate();
 }
 
 export { DateFormControl };
