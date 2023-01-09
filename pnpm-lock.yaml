@@ -1376,7 +1376,7 @@ packages:
     dev: false
 
   /@codevachon/utilities/1.2.0:
-    resolution: {integrity: sha512-MFROSnRCWfyuijw4VbbC0vA5CmOnSYCJ1RUqUGZsahtMM/a5lrA5GUi9UIfggloLj5pZew2Ds6hF4xY1A/ypzA==, tarball: download/@codevachon/utilities/1.2.0/730fb56b0d69abdc5c0f21011faa6ac91f967b23}
+    resolution: {integrity: sha512-MFROSnRCWfyuijw4VbbC0vA5CmOnSYCJ1RUqUGZsahtMM/a5lrA5GUi9UIfggloLj5pZew2Ds6hF4xY1A/ypzA==}
     engines: {node: '>=16'}
     requiresBuild: true
     dev: false
