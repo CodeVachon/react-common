@@ -1,9 +1,29 @@
 import ClassNames from "@codevachon/classnames";
-import { FC, ReactNode, useCallback, useContext } from "react";
+import { FC, ReactNode, useCallback, useContext, useMemo } from "react";
 import { FormContext } from "src/context/FormContext/FormContext";
 import { ListBox, IListBoxProps } from "./../ListBox";
+import { DateFormControl, IDateFormControlProps } from "./DateFormControl";
 
-type FormControlType = "text" | "password" | "email" | "search" | "tel" | "url" | "listbox";
+/**
+ * WithoutFormControlCommonProps strips out common properties as from incoming
+ * form controls because they are handled in this control
+ */
+type WithoutFormControlCommonProps<T> = Omit<T, "onChange" | "value">;
+
+/**
+ * the Valid Form Control Types
+ */
+export const FormControlTypes = [
+    "text",
+    "password",
+    "email",
+    "search",
+    "tel",
+    "url",
+    "listbox",
+    "date"
+] as const;
+export type FormControlType = typeof FormControlTypes[number];
 
 interface IFormControlCommonProps {
     className?: string | ClassNames;
@@ -19,11 +39,17 @@ export interface IFormControlProps extends IFormControlCommonProps {
 
 interface IFormControlListBoxProps
     extends IFormControlCommonProps,
-        Omit<IListBoxProps, "onChange" | "value"> {
+        WithoutFormControlCommonProps<IListBoxProps> {
     type: "listbox";
 }
 
-const FormControl: FC<IFormControlProps | IFormControlListBoxProps> = ({
+interface IFormControlDateProps
+    extends IFormControlCommonProps,
+        WithoutFormControlCommonProps<IDateFormControlProps> {
+    type: "date";
+}
+
+const FormControl: FC<IFormControlProps | IFormControlListBoxProps | IFormControlDateProps> = ({
     className = "",
     name = "",
     children,
@@ -67,6 +93,18 @@ const FormControl: FC<IFormControlProps | IFormControlListBoxProps> = ({
 
     let Control: ReactNode;
     switch (type) {
+        case "date":
+            Control = (
+                <DateFormControl
+                    {...props}
+                    value={String(formData[name])}
+                    onChange={(newValue) => {
+                        updateFormValue(newValue);
+                    }}
+                />
+            );
+            break;
+
         case "listbox":
             Control = (
                 <ListBox
@@ -97,7 +135,10 @@ const FormControl: FC<IFormControlProps | IFormControlListBoxProps> = ({
     }
 
     return (
-        <div className={new ClassNames(commonWrapperClasses).list()}>
+        <div
+            data-type={`formControl-${type}`}
+            className={new ClassNames(commonWrapperClasses).list()}
+        >
             {label && label.length > 0 ? (
                 <label
                     className={new ClassNames([

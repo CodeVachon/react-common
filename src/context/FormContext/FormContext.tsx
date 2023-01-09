@@ -82,15 +82,16 @@ function FormContextProvider<T = UnknownRecord>({
      */
     const handleSubmitCallback = useCallback(
         (newDataSet?: Partial<T>, validationErrors?: Partial<Record<keyof T, string>>) => {
-            setIsWorking(() => false);
+            setIsWorking(false);
 
             if (validationErrors) {
                 setValidationErrors(validationErrors);
             }
 
             if (newDataSet) {
-                setCurrentFormData(() => newDataSet);
-                setResetFormData(() => newDataSet);
+                console.log({ newDataSet });
+                setCurrentFormData({ ...newDataSet });
+                setResetFormData({ ...newDataSet });
             }
         },
         []
@@ -139,7 +140,7 @@ function FormContextProvider<T = UnknownRecord>({
             return;
         }
 
-        setIsWorking(() => true);
+        setIsWorking(true);
 
         Object.freeze(workingData);
 

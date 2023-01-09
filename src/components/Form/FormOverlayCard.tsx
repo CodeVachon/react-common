@@ -18,6 +18,7 @@ export const FormOverlayCard: FC<{
             leaveTo="opacity-0"
         >
             <div
+                data-type="FormBlockOverlay"
                 className={new ClassNames([
                     "absolute z-50 rounded-lg",
                     "flex items-center justify-center",

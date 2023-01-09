@@ -158,6 +158,7 @@ export const FormBlock: FC<IFormBlockProps> = ({
 
     return (
         <form
+            data-type="formBlock"
             onSubmit={handleSubmit}
             className={new ClassNames(["relative z-0"]).add(className).list()}
         >
@@ -188,6 +189,7 @@ export const FormBlock: FC<IFormBlockProps> = ({
                 )}
 
                 <div
+                    data-type={`formBlock-submit`}
                     className={new ClassNames(["flex justify-between space-x-8"])
                         .add({ "border-t py-6 px-4": inModal })
                         .list()}

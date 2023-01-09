@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@codevachon/classnames': ^1.2.0
-  '@codevachon/utilities': ^1.0.0
+  '@codevachon/utilities': ^1.2.0
   '@headlessui/react': ^1.7.4
   '@heroicons/react': ^2.0.13
   '@ladle/react': ^2.4.5
@@ -34,7 +34,7 @@ specifiers:
 
 dependencies:
   '@codevachon/classnames': 1.2.0
-  '@codevachon/utilities': 1.0.0
+  '@codevachon/utilities': 1.2.0
 
 devDependencies:
   '@headlessui/react': 1.7.4_biqbaboplfbrettd7655fr4n2y
@@ -1375,8 +1375,8 @@ packages:
     requiresBuild: true
     dev: false
 
-  /@codevachon/utilities/1.0.0:
-    resolution: {integrity: sha512-7bUtXfzxbbIDNUvyJkX8lxF/wQey1srylGINZ4a4Bhpnl+Oj2IM3ERtP+gY+6jWfV8S3wEJJapJiYX9VT4fgSg==}
+  /@codevachon/utilities/1.2.0:
+    resolution: {integrity: sha512-MFROSnRCWfyuijw4VbbC0vA5CmOnSYCJ1RUqUGZsahtMM/a5lrA5GUi9UIfggloLj5pZew2Ds6hF4xY1A/ypzA==, tarball: download/@codevachon/utilities/1.2.0/730fb56b0d69abdc5c0f21011faa6ac91f967b23}
     engines: {node: '>=16'}
     requiresBuild: true
     dev: false
