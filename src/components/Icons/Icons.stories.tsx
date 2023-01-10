@@ -4,7 +4,7 @@ import { ReactNode, useState } from "react";
 import { Story } from "@ladle/react";
 import { PageTitle } from "../Typography";
 import React from "react";
-import { TextFromControl } from "../FormControl/TextFormControl";
+import { TextFromControl } from "../TextFormControl";
 
 const allIconList: Array<{ label: string; node: (props: IIconProps) => ReactNode }> = iconNames.map(
     (icon) => ({
