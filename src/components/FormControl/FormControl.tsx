@@ -2,27 +2,20 @@ import ClassNames from "@codevachon/classnames";
 import { FC, ReactNode, useCallback, useContext, useMemo } from "react";
 import { FormContext } from "src/context/FormContext/FormContext";
 import { ListBox, IListBoxProps } from "./../ListBox";
-import { DateFormControl, IDateFormControlProps } from "./DateFormControl";
+import { DateFormControl, IDateFormControlProps } from "./../DateFormControl";
+import { PasswordFormControl } from "./../PasswordFormControl";
+import { TextFromControl, TextFromControlTypes, ITextFromControlProps } from "./../TextFormControl";
 
 /**
  * WithoutFormControlCommonProps strips out common properties as from incoming
  * form controls because they are handled in this control
  */
-type WithoutFormControlCommonProps<T> = Omit<T, "onChange" | "value">;
+type WithoutFormControlCommonProps<T> = Omit<T, "onChange" | "value" | "name">;
 
 /**
  * the Valid Form Control Types
  */
-export const FormControlTypes = [
-    "text",
-    "password",
-    "email",
-    "search",
-    "tel",
-    "url",
-    "listbox",
-    "date"
-] as const;
+export const FormControlTypes = [...TextFromControlTypes, "listbox", "date"] as const;
 export type FormControlType = typeof FormControlTypes[number];
 
 interface IFormControlCommonProps {
@@ -33,7 +26,9 @@ interface IFormControlCommonProps {
     type?: FormControlType;
 }
 
-export interface IFormControlProps extends IFormControlCommonProps {
+export interface IFormControlProps
+    extends IFormControlCommonProps,
+        WithoutFormControlCommonProps<ITextFromControlProps> {
     type?: "text" | "password" | "email" | "search" | "tel" | "url";
 }
 
@@ -76,12 +71,6 @@ const FormControl: FC<IFormControlProps | IFormControlListBoxProps | IFormContro
     /**
      * Setup Component Classes
      */
-    const commonControlClasses = new ClassNames([
-        "focus:outline-none focus-visible:ring-primary focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-opacity-75",
-        "block w-full rounded-md sm:text-sm shadow-md",
-        "text-slate-900 dark:text-slate-900",
-        "border border-gray-200"
-    ]);
     const commonWrapperClasses = new ClassNames(["flex flex-col space-y-1"]).add(className);
 
     const updateFormValue = useCallback(
@@ -117,19 +106,27 @@ const FormControl: FC<IFormControlProps | IFormControlListBoxProps | IFormContro
             );
             break;
 
+        case "password":
+            Control = (
+                <PasswordFormControl
+                    value={String(formData[name])}
+                    onChange={(newValue) => {
+                        updateFormValue(newValue);
+                    }}
+                    name={name}
+                />
+            );
+            break;
+
         default:
             Control = (
-                <input
+                <TextFromControl
                     type={type}
-                    name={name}
-                    className={new ClassNames(commonControlClasses).list()}
-                    value={String(formData[name] || "")}
-                    onChange={(event) => {
-                        event.preventDefault();
-                        event.stopPropagation();
-
-                        updateFormValue(event.target.value);
+                    value={String(formData[name])}
+                    onChange={(newValue) => {
+                        updateFormValue(newValue);
                     }}
+                    name={name}
                 />
             );
     }

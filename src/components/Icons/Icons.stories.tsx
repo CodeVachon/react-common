@@ -4,6 +4,7 @@ import { ReactNode, useState } from "react";
 import { Story } from "@ladle/react";
 import { PageTitle } from "../Typography";
 import React from "react";
+import { TextFromControl } from "../FormControl/TextFormControl";
 
 const allIconList: Array<{ label: string; node: (props: IIconProps) => ReactNode }> = iconNames.map(
     (icon) => ({
@@ -45,16 +46,19 @@ export const AllIcons = () => {
             </p>
 
             <div>
-                <input
-                    className={new ClassNames(["rounded-sm border px-4 py-2"]).list()}
-                    placeholder="Filter"
-                    type="text"
+                <TextFromControl
+                    placeholder="filter"
+                    type="search"
                     value={filter}
-                    onChange={(e) => setFilter(e.currentTarget.value)}
+                    onChange={setFilter}
                 />
             </div>
 
-            <ul className={new ClassNames(["grid grid-cols-5 gap-4"]).list()}>
+            <ul
+                className={new ClassNames([
+                    "grid grid-cols-2 lg:grid-cols-3 xl:grid-col-5 gap-4"
+                ]).list()}
+            >
                 {allIconList
                     .filter(({ label }) => new RegExp(filter, "gi").test(label))
                     .map(({ label, node }) => (
